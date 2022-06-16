@@ -5,7 +5,7 @@
 }
 
 :root {
-  --backgrond: hsl(0, 0%, 0%);
+  --background: hsl(0, 0%, 0%);
   --text-color: hsl(0, 0%, 100%);
   --button: hsl(258, 73%, 62%);
   --border: hsl(240, 6%, 17%);
@@ -14,39 +14,34 @@
   font-size: 62.5%; /* 1rem = 10px */
 }
 
-#mobile {
-  display: none;
-}
-
 body {
-  display: grid;
-  margin-top: 5rem;
-  grid-template-rows: 5rem 4rem 20rem 56rem;
+  box-sizing: border-box;
+  background-color: var(--background);
+}
+/*====================================LAPTOP====================================*/
 
-  background-color: var(--backgrond);
+.laptop {
+  margin: 5rem 10rem 0;
+  display: grid;
+  grid-template-rows: 5rem 4rem 20rem calc(56rem - 5.4rem);
 }
 
-.navigation {
+.laptop .navigation {
   grid-row: 1/2;
 }
 
-.navigation nav img {
-  cursor: pointer;
-}
-
-.navigation nav {
+.laptop .navigation nav {
   display: flex;
-  justify-content: space-around;
-}
-
-.navigation nav ul {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+}
+
+.laptop .navigation nav ul {
+  display: flex;
   gap: 3.2rem;
 }
 
-.navigation nav ul li a {
+.laptop .navigation nav ul li a {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
@@ -55,11 +50,18 @@ body {
   letter-spacing: 0.02em;
 
   color: var(--text-color);
+
+  white-space: nowrap;
 }
 
-.navigation nav button {
+.laptop .navigation nav button {
+  border: 1px solid #8257e5;
+  border-radius: 6px;
   background: none;
+  padding: 1.1rem 3.8rem;
+}
 
+.laptop .navigation nav button a {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 800;
@@ -70,28 +72,21 @@ body {
   letter-spacing: 0.02em;
 
   color: var(--text-color);
-
-  border: 1px solid #8257e5;
-  border-radius: 6px;
-
-  padding: 1.1rem 3.8rem;
-
-  cursor: pointer;
+  white-space: nowrap;
 }
 
-.home h1 {
-  display: none;
-}
-
-.about {
+.laptop .about {
   grid-row: 3/4;
+}
 
+.laptop .about header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
 }
 
-.about h2 {
+.laptop .about header h1 {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
@@ -102,9 +97,10 @@ body {
   color: var(--text-color);
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
 }
 
-.about h3 {
+.laptop .about header h2 {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
@@ -114,189 +110,80 @@ body {
 
   text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button),
     -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+  white-space: nowrap;
 }
 
-footer {
+.laptop footer {
   grid-row: 4/5;
-
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
 
+.laptop footer img {
+  max-width: 80rem;
+}
+
+.laptop::after {
+  z-index: -1;
+  content: '';
+  display: inline-block;
+  width: 25rem;
+  height: 25rem;
+  background: #996dff;
+  filter: blur(400px);
+  position: relative;
+  top: 45rem;
+  left: 0;
+}
+
+.mobile,
+.menuExpanded {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  html,
-  body,
-  div,
-  span,
-  applet,
-  object,
-  iframe,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  blockquote,
-  pre,
-  a,
-  abbr,
-  acronym,
-  address,
-  big,
-  cite,
-  code,
-  del,
-  dfn,
-  em,
-  img,
-  ins,
-  kbd,
-  q,
-  s,
-  samp,
-  small,
-  strike,
-  strong,
-  sub,
-  sup,
-  tt,
-  var,
-  b,
-  u,
-  i,
-  center,
-  dl,
-  dt,
-  dd,
-  ol,
-  ul,
-  li,
-  fieldset,
-  form,
-  label,
-  legend,
-  table,
-  caption,
-  tbody,
-  tfoot,
-  thead,
-  tr,
-  th,
-  td,
-  article,
-  aside,
-  canvas,
-  details,
-  embed,
-  figure,
-  figcaption,
-  footer,
-  header,
-  hgroup,
-  menu,
-  nav,
-  output,
-  ruby,
-  section,
-  summary,
-  time,
-  mark,
-  audio,
-  video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  /*====================================MOBILE====================================*/
+  .laptop {
+    display: none;
   }
-  /* HTML5 display-role reset for older browsers */
-  article,
-  aside,
-  details,
-  figcaption,
-  figure,
-  footer,
-  header,
-  hgroup,
-  menu,
-  nav,
-  section {
-    display: block;
-  }
-  body {
-    line-height: 1;
-  }
-  ol,
-  ul {
-    list-style: none;
-  }
-  blockquote,
-  q {
-    quotes: none;
-  }
-  blockquote:before,
-  blockquote:after,
-  q:before,
-  q:after {
-    content: '';
-    content: none;
-  }
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  body {
+  .mobile {
+    grid-row: 1/2;
     margin-top: 3.7rem;
-    max-height: 92.6rem;
+    box-sizing: border-box;
     display: grid;
-    grid-template-rows: 5.85rem 8.5rem 12.8rem 8.8rem 3.5rem 9.8rem 12.9rem 2.5rem 33.3rem;
+    grid-template-rows: 5.85rem 8.85rem 12.8rem 8.8rem 3.5rem 9.8rem 12.9rem 2.5rem 33.3rem;
+    max-height: 92.6rem;
+  }
 
+  .mobile nav {
+    grid-row: 1/2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-inline: 2.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mobile nav a {
+    cursor: pointer;
+    padding: 1rem 3rem 4rem 3rem;
+  }
+
+  .mobile nav img:nth-child(2) {
+    cursor: pointer;
+  }
+
+  .mobile header {
+    grid-row: 3/4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-sizing: border-box;
   }
 
-  .navigation,
-  .about,
-  footer {
-    display: none;
-  }
-
-  #mobile {
-    display: inherit;
-  }
-
-  #mobile nav {
-    grid-row: 1/2;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border-bottom: 1px solid var(--border);
-  }
-  #mobile nav img:nth-child(1) {
-    margin: 2.5rem;
-  }
-
-  #mobile nav img:nth-child(2) {
-    padding: 2.5rem 2.5rem 4.5rem 2.5rem;
-  }
-
-  #mobile header {
-    grid-row: 3/4;
-
-    margin-inline: 2.8rem;
-  }
-
-  #mobile header h1 {
+  .mobile header h1 {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 600;
@@ -306,27 +193,27 @@ footer {
     letter-spacing: 0.02em;
 
     color: var(--text-color);
+
+    padding: 3rem;
   }
 
-  #mobile .button {
-    grid-row: 4/5;
+  .mobile .button {
+    grid-row: 5/6;
 
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 8.8rem;
-    margin-bottom: 9.8rem;
   }
 
-  #mobile .button button {
-    background: hsl(0, 0%, 0%);
-
+  .mobile .button button {
+    background: none;
     border: 1px solid #8257e5;
     border-radius: 6px;
+
     padding: 1rem 3rem;
   }
 
-  #mobile .button button a {
+  .mobile .button button a {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 800;
@@ -338,14 +225,21 @@ footer {
     letter-spacing: 0.02em;
 
     color: var(--text-color);
+
+    display: flex;
+
+    gap: 1rem;
   }
 
-  #mobile .branding {
+  .mobile .branding {
     grid-row: 7/8;
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
 
-  #mobile .branding h2 {
+  .mobile .branding h2 {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
@@ -356,15 +250,9 @@ footer {
     color: var(--text-color);
 
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    white-space: nowrap;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
   }
 
-  #mobile .branding h3 {
+  .mobile .branding h3 {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
@@ -373,27 +261,89 @@ footer {
     /* identical to box height */
 
     letter-spacing: -0.03em;
-
     text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button),
       -1px 1px 0 var(--button), 1px 1px 0 var(--button);
-
-    white-space: nowrap;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
   }
 
-  #mobile footer {
-    display: inherit;
+  .mobile footer {
     grid-row: 9/10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 
-  #mobile footer img {
-    max-width: 42.8rem;
-    max-height: calc(33.3rem - 9.4rem);
+  .mobile::after {
+    z-index: -1;
+    content: '';
+    display: inline-block;
+    width: 35rem;
+    height: 25rem;
+    background: #996dff;
+    filter: blur(400px);
+    position: relative;
+    top: 64.6rem;
+    left: 20rem;
+  }
+  /*====================================MENU EXPANDED====================================*/
+
+  .menuExpanded {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1/2;
   }
 
   .menuExpanded {
+    display: none;
   }
+
+  .menuExpanded div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 3rem 2rem 2.6rem;
+  }
+
+  .menuExpanded div a img {
+    padding: 1.53rem;
+    cursor: pointer;
+  }
+
+  .menuExpanded nav ul li {
+    padding: 1.8rem 0 1.4rem 3rem;
+    border: 1px solid #29292e;
+  }
+
+  .menuExpanded nav ul li a {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+
+    color: var(--border-menu-mobile);
+  }
+  .menuExpanded nav ul li .hovered {
+    box-sizing: border-box;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+
+    color: var(--text-color-menu-mobile);
+  }
+  .menuExpanded nav ul li:nth-child(1) {
+    border-left: 5px solid var(--button);
+  }
+}
+
+/*======================================JAVA SCRIPT===============================*/
+
+.mobileClosed {
+  display: none;
+}
+
+.expandedOpenned {
+  display: inherit;
 }
