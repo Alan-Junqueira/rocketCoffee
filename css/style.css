@@ -1,0 +1,399 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --backgrond: hsl(0, 0%, 0%);
+  --text-color: hsl(0, 0%, 100%);
+  --button: hsl(258, 73%, 62%);
+  --border: hsl(240, 6%, 17%);
+  --border-menu-mobile: hsl(240, 7%, 68%);
+  --text-color-menu-mobile: hsl(240, 9%, 89%);
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+#mobile {
+  display: none;
+}
+
+body {
+  display: grid;
+  margin-top: 5rem;
+  grid-template-rows: 5rem 4rem 20rem 56rem;
+
+  background-color: var(--backgrond);
+}
+
+.navigation {
+  grid-row: 1/2;
+}
+
+.navigation nav img {
+  cursor: pointer;
+}
+
+.navigation nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navigation nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.2rem;
+}
+
+.navigation nav ul li a {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  letter-spacing: 0.02em;
+
+  color: var(--text-color);
+}
+
+.navigation nav button {
+  background: none;
+
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  /* identical to box height */
+
+  letter-spacing: 0.02em;
+
+  color: var(--text-color);
+
+  border: 1px solid #8257e5;
+  border-radius: 6px;
+
+  padding: 1.1rem 3.8rem;
+
+  cursor: pointer;
+}
+
+.home h1 {
+  display: none;
+}
+
+.about {
+  grid-row: 3/4;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about h2 {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 10.9rem;
+  letter-spacing: -0.03em;
+
+  color: var(--text-color);
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.about h3 {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 10.9rem;
+  letter-spacing: -0.03em;
+
+  text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button),
+    -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+}
+
+footer {
+  grid-row: 4/5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  body {
+    margin-top: 3.7rem;
+    max-height: 92.6rem;
+    display: grid;
+    grid-template-rows: 5.85rem 8.5rem 12.8rem 8.8rem 3.5rem 9.8rem 12.9rem 2.5rem 33.3rem;
+
+    box-sizing: border-box;
+  }
+
+  .navigation,
+  .about,
+  footer {
+    display: none;
+  }
+
+  #mobile {
+    display: inherit;
+  }
+
+  #mobile nav {
+    grid-row: 1/2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+  }
+  #mobile nav img:nth-child(1) {
+    margin: 2.5rem;
+  }
+
+  #mobile nav img:nth-child(2) {
+    padding: 2.5rem 2.5rem 4.5rem 2.5rem;
+  }
+
+  #mobile header {
+    grid-row: 3/4;
+
+    margin-inline: 2.8rem;
+  }
+
+  #mobile header h1 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 4.1rem;
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: var(--text-color);
+  }
+
+  #mobile .button {
+    grid-row: 4/5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 8.8rem;
+    margin-bottom: 9.8rem;
+  }
+
+  #mobile .button button {
+    background: hsl(0, 0%, 0%);
+
+    border: 1px solid #8257e5;
+    border-radius: 6px;
+    padding: 1rem 3rem;
+  }
+
+  #mobile .button button a {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: var(--text-color);
+  }
+
+  #mobile .branding {
+    grid-row: 7/8;
+    align-items: center;
+  }
+
+  #mobile .branding h2 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 6.8rem;
+    letter-spacing: -0.03em;
+
+    color: var(--text-color);
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  #mobile .branding h3 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 6.8rem;
+    /* identical to box height */
+
+    letter-spacing: -0.03em;
+
+    text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button),
+      -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  #mobile footer {
+    display: inherit;
+    grid-row: 9/10;
+  }
+
+  #mobile footer img {
+    max-width: 42.8rem;
+    max-height: calc(33.3rem - 9.4rem);
+  }
+
+  .menuExpanded {
+  }
+}
